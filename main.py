@@ -13,10 +13,7 @@ pytesseract.pytesseract.tesseract_cmd = r'C:\Users\sssqaq\AppData\Local\Programs
 COLOR_BLACK = "#000000"
 COLOR_PINK = "#FF1493"  # Deep Pink
 COLOR_YELLOW = "#FFD700" # Gold / Yellow
-MODERN_FONT = "Segoe UI" # Современный шрифт для Windows
-
-# Настройка Tesseract (раскомментируйте и укажите свой путь)
-# pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+MODERN_FONT = "Segoe UI"
 
 class Database:
     def __init__(self, db_name="hivine_ocr.db"):
@@ -72,7 +69,7 @@ class HivineOCR(ctk.CTk):
     def setup_main_screen(self):
         self.clear_screen()
 
-        # Кнопка GitHub (в верхнем углу)
+        # Кнопка GitHub
         github_btn = ctk.CTkButton(
             self, text="GitHub ↗", width=80, height=30,
             fg_color="transparent", border_width=1, border_color=COLOR_PINK,
@@ -85,7 +82,7 @@ class HivineOCR(ctk.CTk):
         main_frame = ctk.CTkFrame(self, fg_color="transparent")
         main_frame.pack(expand=True)
 
-        # Название с имитацией градиента (используем Розовый)
+        # Название
         self.label_title = ctk.CTkLabel(
             main_frame, text="Hivine OCR", 
             font=(MODERN_FONT, 52, "bold"),
@@ -100,7 +97,7 @@ class HivineOCR(ctk.CTk):
         )
         self.label_subtitle.pack(pady=(0, 50))
 
-        # Кнопка Начать (Розовый фон, Желтый текст при наведении)
+        # Кнопка Начать 
         self.start_btn = ctk.CTkButton(
             main_frame, text="НАЧАТЬ", 
             command=self.upload_images,
